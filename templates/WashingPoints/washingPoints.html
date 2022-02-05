@@ -1,0 +1,41 @@
+{% extends 'CleanningService/base.html' %} 
+
+{% block title %}Washing Points{% endblock %}
+
+{% block container %}
+
+    <!-- Top Bar Start -->
+    {% include 'CleanningService/topbar.html' %}
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar Start -->
+    {% include 'CleanningService/navbar.html' %}
+    <!-- Nav Bar End -->
+
+        
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Washing Points</h2>
+                </div>
+                <div class="col-12">
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'washingPoints' %}">Location</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Location Start -->
+    {% include 'CleanningService/location.html' %}
+    <!-- Location End -->
+
+
+    <!-- Footer Start -->
+    {% include 'CleanningService/footer.html' %}
+    <!-- Footer End -->
+
+{% endblock %}

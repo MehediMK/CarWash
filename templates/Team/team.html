@@ -1,0 +1,40 @@
+{% extends 'CleanningService/base.html' %} 
+
+{% block title %}Home{% endblock %}
+
+{% block container %}
+
+    <!-- Top Bar Start -->
+    {% include 'CleanningService/topbar.html' %}
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar Start -->
+    {% include 'CleanningService/navbar.html' %}
+    <!-- Nav Bar End -->
+
+            
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Team Member</h2>
+                </div>
+                <div class="col-12">
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'teams' %}">Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->        
+
+    <!-- Team Start -->
+    {% include 'CleanningService/team.html' %}
+    <!-- Team End -->
+
+    <!-- Footer Start -->
+    {% include 'CleanningService/footer.html' %}
+    <!-- Footer End -->
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% load mytags %}      
+<!-- Price Start -->
+<div class="price">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Washing Plan</p>
+            <h2>Choose Your Plan</h2>
+        </div>
+        <div class="row">
+            {% if plans %}
+                {% for plan in plans %}
+                    {% if plan.CPFeatured == True %}                    
+                        <div class="col-md-4">
+                            <div class="price-item featured-item">
+                                <div class="price-header">
+                                    <h3>{{plan.CPName}}</h3>
+                                    <h2><span>$</span><strong>{{plan.CPPrice|bdecimalplace}}</strong><span>{{plan.CPPrice|adecimalplace}}</span></h2>
+                                </div>
+                                <div class="price-body">
+                                    <ul>
+                                        {% for item in plan.CPItems.all %}
+                                            <li><i class="far fa-check-circle"></i>{{item.SName}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="price-footer">
+                                    <a class="btn btn-custom" href="">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-md-4">
+                            <div class="price-item">
+                                <div class="price-header">
+                                    <h3>{{plan.CPName}}</h3>
+                                    <h2><span>$</span><strong>{{plan.CPPrice|bdecimalplace}}</strong><span>{{plan.CPPrice|adecimalplace}}</span></h2>
+                                </div>
+                                <div class="price-body">
+                                    <ul>
+                                        {% for item in plan.CPItems.all %}
+                                            <li><i class="far fa-check-circle"></i>{{item.SName}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="price-footer">
+                                    <a class="btn btn-custom" href="">Book Now</a>
+                                </div>
+                            </div>
+                        </div>                    
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- Price End -->

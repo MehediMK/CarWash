@@ -1,0 +1,45 @@
+{% if services %}
+    
+        <!-- Service Start -->
+        <div class="service">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>What We Do?</p>
+                    <h2>Premium Washing Services</h2>
+                </div>
+                <div class="row">
+
+                {% for service in services %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-item">
+                            <i class="{{service.SIcon}}"></i>
+                            <h3>{{service.SName}}</h3>
+                            {% comment %} <p class="text-justify">{{service.shotdesc}} ...</p> {% endcomment %}
+                            
+                                <p class="">{{service.shotdesc | add:" ..."}}</p>
+                            
+                        </div>
+                    </div>
+                {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+{% else %}
+    <!-- Service Start -->
+        <div class="service">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>What We Do?</p>
+                    <h2>Premium Washing Services</h2>
+                </div>
+                <div class="text-warning text-center">
+                    
+                    <h3>No Item found.</h3>
+                    
+                </div>
+            </div>
+        </div> 
+        <!-- Service End -->     
+{% endif %}

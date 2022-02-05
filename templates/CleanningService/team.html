@@ -1,0 +1,32 @@
+{% load static %}
+<!-- Team Start -->
+<div class="team">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Meet Our Team</p>
+            <h2>Our Engineers & Workers</h2>
+        </div>
+        <div class="row">
+            {% for employee in employees %}
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{ employee.ProfilePic.url }}" alt="Team Image">
+                        </div>
+                        <div class="team-text">
+                            <h2>{{employee.EName}}</h2>
+                            <p>{{employee.Position}}</p>
+                            <div class="team-social">
+                                <a href="{{employee.Twitter}}" target='_blank' ><i class="fab fa-twitter"></i></a>
+                                <a href="{{ employee.Facebook }}" target='_blank' ><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{employee.Linkedin}}" target='_blank'><i class="fab fa-linkedin-in"></i></a>
+                                <a href="{{employee.Instagram}}" target='_blank'><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Team End -->

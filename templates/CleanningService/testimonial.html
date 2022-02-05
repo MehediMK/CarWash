@@ -1,0 +1,32 @@
+{% load static %}
+        
+<!-- Testimonial Start -->
+<div class="testimonial">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Testimonial</p>
+            <h2>What our clients say</h2>
+        </div>
+        <div class="owl-carousel testimonials-carousel">
+
+            {% for testimonial in testimonials %}
+                <div class="testimonial-item">
+                    {% if testimonial.CImage %}
+                    <img src="{{ testimonial.CImage.url }}" alt="Image">
+                    {% else %}
+                    <img src="{% static 'img/testimonial-1.jpg' %}" alt="Image">
+                    {% endif %}
+                    <div class="testimonial-text">
+                        <h3>{{testimonial.CName}}</h3>
+                        <h4>{{testimonial.CProfession}}</h4>
+                        <p>
+                            {{testimonial.comment|add:'...'}}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->

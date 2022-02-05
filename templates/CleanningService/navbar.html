@@ -1,0 +1,74 @@
+{% load mytags %}
+<!-- Nav Bar Start -->
+<div class="nav-bar">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <a href="#" class="navbar-brand">MENU</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav mr-auto">
+                    {% if request.path|checkpath == '' %}
+                        <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+                    {% else %}
+                        <a href="{% url 'home' %}" class="nav-item nav-link">Home</a>
+                    {% endif %}
+
+                    {% if request.path|checkpath == 'aboutus' %}
+                        <a href="{% url 'aboutus' %}" class="nav-item nav-link active">About</a>
+                    {% else %}
+                        <a href="{% url 'aboutus' %}" class="nav-item nav-link">About</a>
+                    {% endif %}
+                    
+                    {% if request.path|checkpath == 'services' %}
+                        <a href="{% url 'services' %}" class="nav-item nav-link active">Service</a>
+                    {% else %}
+                        <a href="{% url 'services' %}" class="nav-item nav-link">Service</a>
+                    {% endif %}
+
+                    {% if request.path|checkpath == 'prices' %}
+                        <a href="{% url 'prices' %}" class="nav-item nav-link active">Price</a>
+                    {% else %}
+                        <a href="{% url 'prices' %}" class="nav-item nav-link">Price</a>
+                    {% endif %}
+
+                    {% if request.path|checkpath == 'washingPoints' %}
+                        <a href="{% url 'washingPoints' %}" class="nav-item nav-link active">Washing Points</a>
+                    {% else %}
+                        <a href="{% url 'washingPoints' %}" class="nav-item nav-link">Washing Points</a>
+                    {% endif %}
+
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu">
+                            {% if request.path|checkpath == 'blog' %}
+                                <a href="{% url 'blog' %}" class="nav-item nav-link active">Blog Grid</a>
+                            {% else %}
+                                <a href="{% url 'blog' %}" class="dropdown-item ">Blog Grid</a>
+                            {% endif %}
+
+                            {% if request.path|checkpath == 'teams' %}
+                                <a href="{% url 'teams' %}" class="nav-item nav-link active">Team Member</a>
+                            {% else %}
+                                <a href="{% url 'teams' %}" class="dropdown-item">Team Member</a>
+                            {% endif %}
+                            <a href="booking.html" class="dropdown-item">Schedule Booking</a>
+                        </div>
+                    </div>
+                    {% if request.path|checkpath == 'contacts' %}
+                    <a href="{% url 'contacts' %}" class="nav-item nav-link active">Contact</a>
+                    {% else %}
+                    <a href="{% url 'contacts' %}" class="nav-item nav-link">Contact</a>
+                    {% endif %}
+                </div>
+                <div class="ml-auto">
+                    <a class="btn btn-custom" href="#">Get Appointment</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Nav Bar End -->

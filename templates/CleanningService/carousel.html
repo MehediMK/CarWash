@@ -1,0 +1,27 @@
+{% load static %}
+<!-- Carousel Start -->
+<div class="carousel">
+    <div class="container-fluid">
+        <div class="owl-carousel">
+
+            {% for carousel in carousels %}
+
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="{{carousel.CaImage.url }}" alt="{{carousel.Catitle}}">
+                </div>
+                <div class="carousel-text">
+                    <h3>{{carousel.Catitle}}</h3>
+                    <h1>{{carousel.CaSubTitle}}</h1>
+                    <p>
+                        {{carousel.desc}}
+                    </p>
+                    <a class="btn btn-custom" href="">Explore More</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
